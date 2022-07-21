@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>
+            Counselling Form
+        </title>
+        <link rel = "stylesheet" href = "styles.css">
+        <script>
+            
+                function mobileValidation(){
+                    var regx = /^[6-9]{1}[0-9]{9}$/;
+                    var num = document.getElementById("mobile").value;
+                    
+                    if((regx.test(num))){
+                        document.getElementById("mobileval").style.visibility  = "hidden";
+                        document.getElementById("mobile").style.border = "2px solid rgba(1, 27, 50)";
+                        return true;
+                    }
+                    else{
+                        document.getElementById("mobileval").style.visibility  = "visible";
+                        document.getElementById("mobile").style.border = "2px solid red";
+                        document.getElementById("mobile").focus;
+                        return false;
+                    }
+                }
+    
+        </script>
+    </head>
+
+    <body style = "background-color:  rgba(1, 27, 50);">
+        <br><br><br>
+        <ul>
+            <li><a href = "index.php">Home</a></li>
+            <li><a href = "advise.html">Health Advisories</a></li>
+            <li><a href = "finance.html" >Financial Support</a></li>
+            <li><a href = "donate.html" >Donate</a></li>
+            <li><a href = "#" class = "active" >Need Counselling?</a></li>
+            <li style = "float:right;border-left: 1px solid black;"><a href = "contact.html">Contact Us</a></li>
+        </ul><br><br>
+        <div class = "formcontainer">
+        <form onsubmit = "return mobileValidation();" method = "POST" action = "counsellingresponse.php">
+            <h2 style = "text-align: center;color:  rgba(1, 27, 50);border-bottom: 2px solid rgba(1, 27, 50);margin-top: 20px;padding-bottom: 10px;">COUNSELLING REQUEST FORM</h2>
+            <label for = "name">Name</label><br>
+            <input type = "text" name = "name" required/><br><br>
+
+            <label for = "age">Age</label><br>
+            <input type = "text" name = "age" required /><br><br>
+            
+            <label for = "idnumber">ID Number</label><br> 
+            <input type = "text" name = "id" required/><br><br>
+            
+            <label for = "mobile">Mobile Number</label><br>
+            <input type = "text" id = "mobile" name = "mobile" onchange = "mobileValidation()" required/><br>
+            <label for = "mobile" id = "mobileval" style = "visibility:hidden;color: red;font-size: 15px;" >Invalid Mobile number</label><br>
+
+            <label for = "email" >E-mail</label><br>
+            <input type = "email" name = "email" required/><br><br>
+
+            <label for = "problem">Problem</label><br>
+            <input type = "text" name = "problem" required /><br><br>
+            <center>
+            <button class = "btn button" style = "width:20%" type = "reset" name = "Reset">Reset</button>
+            <button class = "btn button" type = "submit" style = "width:20%;" value = "Submit">Submit</button>
+            </center>
+
+        </form>
+        </div>
+    </body>
+</html>

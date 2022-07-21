@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Claim your financial Aid money!</title>
+<link rel = "stylesheet" href = "styles.css" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script>
+
+                function mobileValidation(){
+                    var regx = /^[6-9]{1}[0-9]{9}$/;
+                    var num = document.getElementById("mobile").value;
+                    
+                    if((regx.test(num))){
+                        document.getElementById("mobileval").style.visibility  = "hidden";
+                        document.getElementById("mobile").style.border = "2px solid rgba(1, 27, 50)";
+                    }
+                    else{
+                        document.getElementById("mobileval").style.visibility  = "visible";
+                        document.getElementById("mobile").style.border = "2px solid red";
+                    }
+                }
+
+                function amountValidation(){
+                    var amount = document.getElementById("amt").value;
+                    if(isFinite(amount) == true){
+                        document.getElementById("amountval").style.visibility  = "hidden";
+                        document.getElementById("amt").style.border = "2px solid rgba(1, 27, 50)";
+                    }
+                    else{
+                        document.getElementById("amountval").style.visibility  = "visible";
+                        document.getElementById("amt").style.border = "2px solid red";
+                    }
+               }
+              
+     function validateifsc(){
+		var ifsc = document.getElementById("ifsc").value;
+		var regx2 = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+		
+		if(regx2.test(ifsc)){
+			document.getElementById("ifscval").style.visibility  = "hidden";
+			document.getElementById("ifsc").style.border = "2px solid rgba(1, 27, 50)";
+			
+		}
+		else{
+			document.getElementById("ifscval").style.visibility  = "visible";
+            document.getElementById("ifsc").style.border = "2px solid red";
+            
+        }
+	}
+    
+    </script>
+
+</head>
+
+<body>
+    <br><br><br>
+    <ul>
+        <li><a href = "index.php">Home</a></li>
+        <li><a href = "advise.html">Health Advisories</a></li>
+        <li><a href = "finance.html" class = "active">Financial Support</a></li>
+        <li><a href = "donate.html">Donate</a></li>
+        <li><a href = "counselling.html">Need Counselling?</a></li>
+        <li style = "float:right;border-left: 1px solid black;"><a href = "contact.html">Contact Us</a></li>
+    </ul>
+    <br><br>
+
+<div class = "formcontainer">
+<form onsubmit = "return amountValidation() && mobileValidation() && validateifsc();" method="POST" action = "financeresponse.php">
+
+<h2 style = "text-align: center; color: rgba(1, 27, 50) ;
+border-bottom:2px solid rgba(1, 27, 50); margin-bottom: 20px; padding-bottom: 20px;">FINANCIAL AID REQUEST FORM</h2>
+
+<label for="name">Name</label><br>
+<input type="text" id="uname"  name="name" required/><br><br>
+
+<label for="id" >ID Number</label><br>
+<input type="text" min="1" max="50" step="1" class="input" id="id" name="id" required/><br><br>
+
+<label for="mobile">Mobile number</label><br>
+<input type="text" min="1" id="mobile" onchange = "mobileValidation()" name="mobile" required/><br>
+<label for = "mobile" id = "mobileval" style = "visibility:hidden;color: red;font-size: 15px;" >Invalid Mobile number</label><br>
+
+
+<label for="email">E-mail ID</label><br>
+<input type="email" class="input" id="email" name="email" /><br><br>
+
+<p style = "margin-left: 27%;font-size: 18px;font-family: cursive;color: rgba(1, 27, 50);">Are you tested positive for covid?</p>
+<input type="radio" style = "margin-left:30%;" name="covidstatus" id="yes1" value="Yes">
+<label style = "margin-left:0%;" for="yes1">Yes</label>
+<input type="radio" style = "margin-left:5%;" name="covidstatus" id="no1" value="No" checked="true">
+<label style = "margin-left:0%;" for="no1">No</label>
+
+<br><br>
+
+<p style = "margin-left: 27%;font-size:18px;font-family: cursive;color: rgba(1, 27, 50);">Are your family members affected?</p>
+<input type="radio" style = "margin-left:30%;" name="famcovidstatus" id="yes2" value="Yes">
+<label style = "margin-left:0%;" for="yes2">Yes</label>
+<input type="radio" style = "margin-left:5%;" name="famcovidstatus" id="no2" value="No" checked="true">
+<label style = "margin-left:0%;" for="no2">No</label><br><br>
+
+<label for = "reason">Reason to claim financial support</label><br>
+<input type = "text" name = "reason" />
+<br><br>
+
+<label for="amount">Expecting amount  </label><br>
+<input type="text" id="amt" name = "amount" onchange = "amountValidation()" required/><br>
+<label for = "amount" id = "amountval" style = "visibility:hidden;color: red;font-size: 15px;" >Invalid Amount</label><br>
+
+<label for="account">Account number </label><br>
+<input type="text" min="1" maxlength="15" id="account" name="account" required/><br><br>
+
+<label for="bankdet">Bank Name</label><br>
+<input type = "text" class="input" id="bankdet" name="bank" required/><br><br>
+
+<label for="ifsc">IFSC Code</label><br>
+<input type="text" id="ifsc" name="ifsc" onchange = "validateifsc()"required/><br>
+<label id = "ifscval" style = "visibility: hidden;color: red;font-size: 15px;">Invalid IFSC Code</label><br>
+
+<button style = "margin-left: 33%;" class = "button btn" type="reset" >Reset</button>
+<button class = "button btn" type="submit">Submit</button>
+<br></div>
+</form>
+<br><br>
+<h2 style = "font-family: cursive;color: #bbb;">Documents Required</h2>
+<p style = "font-size: 18px;color: #bbb;font-family: cursive;">
+    1. Medical Ceritificate.<br>
+    2. Estimated Bill Copy.<br>
+</p>
+<center>
+    
+    <a target="_top" style="color: white;font-weight: bold;font-family: cursive;font-size: 18px;" href="mailto:softsolutionscovidcare@gmail.com">
+        Send the required files through mail by clicking here</a>
+    <br><br>
+</center>
+
+</body>
+</html>
+
+

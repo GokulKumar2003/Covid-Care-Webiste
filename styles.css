@@ -1,0 +1,316 @@
+
+/* navigation bar style */
+ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0px 0px;
+    overflow: hidden;
+    background-color: #bbb;
+    }
+    
+    li {
+    float: left;
+    border-right: 1px solid black;
+    }
+    
+    li a {
+    
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 22px;
+    font-family: cursive;
+    padding: 14px 20px;
+    text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+    color: black;
+    background-color: rgb(244, 250, 244);
+    }
+    .active{
+        background-color: black; /* style for active navbar */
+        color: #bbb;
+    }
+    
+
+/* --- */
+
+/* button style */
+    .button{
+        cursor: pointer;
+        font-size: 16px;
+        padding: 14px 21px;
+        margin: 5px;
+        font-family: cursive;
+        border: 2px solid   rgba(1, 27, 50);
+
+    }
+    .btn{
+        color: #bbb;
+        background-color:  rgba(1, 27, 50);
+    }
+
+    .btn:hover{
+       background-color: #bbb;
+       color:  rgba(1, 27, 50); 
+    }
+/* --- */
+
+/* form styles (label, input, focus) */
+.formcontainer{
+    padding: 20px 20px;
+    margin: auto;
+    width: 45%;
+    justify-content: center;
+    border: 3px solid #bbb;
+    background-color: #bbb;                
+}
+input[type = "text"]{
+    width: 45%;
+    height: 30px;
+    border: 2px solid rgba(1, 27, 50);
+    margin-left: 27%;
+    font-size: 16px;
+    font-family: cursive;
+
+}
+input[type = "email"]{
+    width: 45%;
+    height: 30px;
+    border: 2px solid rgba(1, 27, 50);
+    margin-left: 27%;
+    font-size: 16px;
+    font-family: cursive;
+
+}
+input[type = "password"]{
+    width: 45%;
+    height: 33px;
+    border: 2px solid rgba(1, 27, 50);
+    margin-left: 27%;
+    font-size: 16px;
+    font-family: cursive;
+
+}
+select{
+    width: 47%;
+    height: 37px;
+    border: 2px solid rgba(1, 27, 50);
+    font-size: 16px;
+    font-family: cursive;
+    margin-left: 27%;
+}
+#mobile{
+    border: 2px solid rgba(1, 27, 50);
+}
+#amt{
+    border: 2px solid rgba(1, 27, 50);
+}
+input[type = "text"]{
+    font-size: 16px;
+    font-family: cursive;
+}
+
+input[type = "email"]{
+    font-family: cursive;
+    font-size: 16px;
+}
+input[type = "password"]:focus{
+    outline: 1px solid rgba(1, 27, 50);
+}
+input[type = "text"]:focus{
+    outline: 1px solid  rgba(1, 27, 50);     
+}
+input[type = "email"]:focus{
+    outline: 1px solid  rgba(1, 27, 50);
+    
+}
+select:focus{
+    outline: 1px solid  rgba(1, 27, 50);
+}
+
+input[type='radio']:checked:after {
+    background-color:rgb(1, 27, 50);
+}
+
+label{
+    margin-left: 27%;
+    font-size: 18px;
+    color:  rgba(1, 27, 50);
+    font-family: cursive; 
+}
+/* --- */
+
+
+/* heading(comapny title) in home page */
+.head{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    background-color: rgba(1, 27, 50);
+    font-family: cursive;
+}
+/* --- */
+
+
+/* response page body and div */
+.responsebody{
+    background-color: rgb(1, 27, 50);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+.responsediv{
+    background-color: #bbb;
+    color:  rgba(1, 27, 50);
+    width: 50%;
+    font-size: 20px;
+    font-family: cursive;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+/* ---- */
+
+/* flip card in donate page */
+
+.flip-card {
+    background-color: transparent;
+    width: 500px;
+    height: 500px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    font-size: 20px;
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+  }
+  
+  .flip-card-back {
+    background-color: #bbb;
+    color: rgba(1, 27, 50);
+    font-size: 20px;
+    font-family: cursive;;
+    transform: rotateY(180deg);
+           
+  }
+  .card1{
+      
+      margin-left: 15%;
+      margin-right: 5%;
+      float: left;
+      
+  }
+  .card2{
+      float: left;
+  }
+  /* --- */
+  body{
+      background-color: rgba(1, 27, 50);  
+  }
+
+/* contact body styles */
+  .fa {
+    padding: 2%;
+font-size: 30px;
+width: 5%;
+background-color: #bbb;
+text-align: center;
+text-decoration: none;
+margin: 5px 2px;
+}
+.fa:hover{
+    color: white;
+}
+
+.fa-facebook{
+color: #3B5998;
+background-color: #bbb;
+}
+.fa-instagram{
+color: red;
+background-color: #bbb;
+}
+.fa-twitter{
+color: #55ACEE;;
+background-color: #bbb;
+}
+.fa-youtube{
+color:#bb0000;
+background-color: #bbb;
+
+}
+.fa-linkedin{
+color: #007bb5;
+background-color: #bbb;
+}
+.fa-google{
+color: #dd4b39;
+background-color: #bbb;
+}
+.contactdiv{
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+
+/* ------------- */
+
+/* home page content style */
+.homepagecontent{
+    width: 70%;
+    font-size: 22px;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: #bbb;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.tablediv{
+background-color: #bbb;
+width: 30%;
+font-family: cursive;
+margin-left: auto;
+margin-right: auto;
+font-size: 20px;
+padding-left: 10%;
+padding-right: 10%;
+
+
+}
+
+/* ------- */

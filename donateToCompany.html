@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Donating to the Company</title>
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset = "UTF-8">
+        
+        <link rel = "stylesheet" href = "styles.css" >
+        <meta charset = "UTF-8">
+        
+         <script>
+                function mobileValidation(){
+                    var regx = /^[6-9]{1}[0-9]{9}$/;
+                    var num = document.getElementById("mobile").value;
+                    
+                    if((regx.test(num))){
+                        document.getElementById("mobileval").style.visibility  = "hidden";
+                        document.getElementById("mobile").style.border = "2px solid rgba(1, 27, 50)";
+                    }
+                    else{
+                        document.getElementById("mobileval").style.visibility  = "visible";
+                        document.getElementById("mobile").style.border = "2px solid red";
+                    }
+                }
+
+               function amountValidation(){
+                    var amount = document.getElementById("amt").value;
+                    if(isFinite(amount) == true){
+                        document.getElementById("amountval").style.visibility  = "hidden";
+                        document.getElementById("amt").style.border = "2px solid rgba(1, 27, 50)";
+                    }
+                    else{
+                        document.getElementById("amountval").style.visibility  = "visible";
+                        document.getElementById("amt").style.border = "2px solid red";
+                    }
+               }
+
+                
+        
+        </script>
+    </head>
+
+    <body style = "background-color: rgba(1, 27, 50);">
+        <br><br>
+        <div class = "formcontainer">
+        <marquee style = "font-family:cursive;font-size: 16px;color: red;">
+            Donating amount will be deducted from your salary. No need to pay to the company account.</marquee>
+        <form onsubmit = "return amountValidation() && mobileValidation();" method = "POST" action = "donatetocompanyresponse.php">
+            <h2 style = "text-align: center;color: rgba(1, 27, 50);border-bottom: 2px solid rgba(1, 27, 50) ;margin-top: 20px;padding-bottom: 10px;">
+                DONATION FORM</h2>
+            <label for = "name">Name</label><br>
+            <input type = "text" name = "name" required/><br><br>
+
+           <!-- <label for = "age">Age</label><br>
+            <input type = "text" name = "age" required /><br><br> -->
+            
+            <label for = "id">ID Number</label><br> 
+            <input type = "text" name = "id" required/><br><br>
+            
+            <label for = "mobile">Mobile Number</label><br>
+            <input type = "text" id = "mobile" onchange = "mobileValidation()" name = "mobile" required/><br>
+            <label for = "mobile" id = "mobileval" style = "visibility:hidden;color: red;font-size: 15px;" >Invalid Mobile number</label><br>
+
+            <label for = "email" >E-mail</label><br>
+            <input type = "email" name = "email" required/><br><br>
+
+            <label for = "amount">Donating Amount</label>
+            <input id = "amt" type = "text" onchange = "amountValidation()" name = "amount" /><br>
+            <label for = "amount" id = "amountval" style = "visibility:hidden;color: red;font-size: 15px;" >Invalid Amount</label><br>
+            <center>
+            <button class = "btn button" style = "width:20%" type = "reset" name = "Reset">Reset</button>
+            <button class = "btn button" type = "submit" style = "width:20%;" value = "Submit">Submit</button>
+            </center>
+        </form>
+        </div>
+    </body>
+</html>
